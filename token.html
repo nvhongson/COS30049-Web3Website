@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token History</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="header-container">
+                <div class="connect-wallet-container">
+                    <button class="connect-wallet-button">Connect Wallet</button>
+                </div>
+                <div class="header-right">
+                    <input type="text" placeholder="Search Transaction ID" id="searchInput">
+                </div>
+            </div>
+        </header>
+        <nav class="beige-navbar">
+            <div class="navigation-bar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="landingpage.html">Home</a></li>
+                    <li class="nav-item"><a href="swap.html">Swap</a></li>
+                    <li class="nav-item"><a href="token.html">Tokens</a></li>
+                    <li class="nav-item"><a href="NFT.html">NFT</a></li>
+                    <li class="nav-item"><a href="transaction.html">Transaction History</a></li>
+                    <li class="nav-item"><a href="accounts.html">Account</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="account-section">
+            <div class="token-history">
+                <h3>Token History - All prices are in USD</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Token ID</th>
+                            <th>Name</th>
+                            <th>Symbol</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody id="token-data">
+                        <!-- Token data will be dynamically added here using JavaScript -->
+                    </tbody>
+                </table>
+                <div style="text-align: center; margin-top: 20px;">
+                    <input type="text" placeholder="Search Transaction ID" id="searchInput">
+                    <button type="button" onclick="searchTransaction()">Search</button>
+                </div>
+                <div id="result" style="text-align: center;"></div>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* Resize symbols to be the same size as text */
+        .symbol {
+            max-width: 20px;
+            height: auto;
+        }
+    </style>
+    <script>
+        // Sample token data (you can replace this with your actual data)
+        const tokens = [
+            { id: 'BTC', name: 'Bitcoin', symbol: '<img class="symbol" src="images/btc.jpg" alt="BTC" />', price: '$27,884.55' },
+            { id: 'ETH', name: 'Ethereum', symbol: '<img class="symbol" src="images/eth.png" alt="ETH" />', price: '$1,579.59' },
+            { id: 'USDT', name: 'Tether USDT', symbol: '<img class="symbol" src="images/usdt.png" alt="USDT" />', price: '$1.00' },
+            { id: 'BNB', name: 'BNB', symbol: '<img class="symbol" src="images/bnb.png" alt="BNB" />', price: '$213.21' },
+            { id: 'XRP', name: 'XRP', symbol: '<img class="symbol" src="images/xrp.png" alt="XRP" />', price: '$0.49' },
+            { id: 'USDC', name: 'USDC', symbol: '<img class="symbol" src="images/usdc.png" alt="USDC" />', price: '$1.00' },
+            { id: 'SOL', name: 'Solana', symbol: '<img class="symbol" src="images/solana.png" alt="SOL" />', price: '$23.50' },
+            { id: 'LTC', name: 'LiteCoin', symbol: '<img class="symbol" src="images/ltc.jpg" alt="LTC" />', price: '$63.78' },
+            // Add more tokens as needed
+        ];
+
+        // Function to populate the table with token data
+        function populateTokenTable() {
+            const tableBody = document.getElementById('token-data');
+            tokens.forEach(token => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${token.id}</td>
+                    <td>${token.name}</td>
+                    <td>${token.symbol}</td>
+                    <td>${token.price}</td>
+                `;
+                tableBody.appendChild(row);
+            });
+        }
+
+        // Call the function to populate the table when the page loads
+        window.addEventListener('load', populateTokenTable);
+
+        // Function to search for a specific transaction by ID
+        function searchTransaction() {
+            const searchInput = document.getElementById('searchInput').value;
+            const foundToken = tokens.find(token => token.id === searchInput);
+            const resultElement = document.getElementById('result');
+
+            if (foundToken) {
+                resultElement.innerHTML = `Transaction ID: ${foundToken.id}<br>Name: ${foundToken.name}<br>Price: ${foundToken.price}`;
+            } else {
+                resultElement.innerHTML = `No transaction found for ID: ${searchInput}. This website does not support this crypto.`;
+            }
+        }
+    </script>
+</body>
+<footer>
+            <p>&copy; NFT Trading Platform</p>
+            <p>NFT site made by William Wei, Son Nguyen, Sathnidu Athauda</p>
+            <img src="images/logo.png" alt="NFT Trading Platform Logo" class="logo">
+        </footer>
+</html>

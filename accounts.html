@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My account</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="header-container">
+                <div class="connect-wallet-container">
+                    <button class="connect-wallet-button">Connect Wallet</button>
+                </div>
+                <div class="header-right">
+                    <input type="text" placeholder="Search Something">
+                    <button type="submit">Filter</button>
+                </div>
+            </div>
+        </header>
+        <nav class="beige-navbar">
+            <div class="navigation-bar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="landingpage.html">Home</a></li>
+                    <li class="nav-item"><a href="swap.html">Swap</a></li>
+                    <li class="nav-item"><a href="token.html">Tokens</a></li>
+                    <li class="nav-item"><a href="NFT.html">NFT</a></li>
+                    <li class="nav-item"><a href="transaction.html">Transaction History</a></li>
+                    <li class="nav-item"><a href="accounts.html">Account</a></li>
+                </ul>
+            </div>
+        </nav>
+        <main>
+            <div class="content-box">
+                <div class="content">
+                    <h1 class="center-h1">Account Information</h1> <!-- Centered heading -->
+                    <!-- Avatar Display -->
+                    <div class="avatar-display">
+                        <img src="images/avatar.jpg" alt="Avatar">
+                    </div>
+                   <div class="account-section">
+    <!-- Transaction History -->
+    <div class="transaction-history">
+        <h3>Transaction History</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Currency</th>
+                    <th>Amount</th>
+                    <th>Sender</th>
+                </tr>
+            </thead>
+            <tbody id="transaction-data">
+                <!-- Transaction data will be dynamically added here using JavaScript -->
+            </tbody>
+        </table>
+    </div>
+</div>
+                        <!-- Wallet Balance -->
+                        <div class="wallet-bid-history">
+    <h3>Wallet Balance</h3>
+    <!-- Add wallet/bid history content here -->
+    <button class="connect-wallet-button">Connect Wallet</button>
+</div>
+<script>
+    // Function to check wallet connection
+    function checkWalletConnection() {
+        // Simulate wallet connection (you should replace this with your wallet connection logic)
+        const isConnected = true; // Set this to true if the wallet is successfully connected
+
+        if (isConnected) {
+            // Wallet connected, display the balance
+            document.getElementById("wallet-balance").textContent = "Your Wallet Balance: $1000"; // Replace with the actual balance
+        } else {
+            // Wallet not connected, show a popup
+            alert("No wallet connected. Please connect your wallet.");
+        }
+    }
+</script>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <p>&copy; NFT Trading Platform</p>
+            <p>NFT site made by William Wei, Son Nguyen, Sathnidu Athauda</p>
+            <img src="images/logo.png" alt="NFT Trading Platform Logo" class="logo">
+        </footer>
+    </div>
+</body>
+</html>

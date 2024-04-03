@@ -1,0 +1,324 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #e8ded1;
+}
+
+/* Reset hyperlink styles */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Header Styles */
+#header-container {
+    background-image: url('https://assets.weforum.org/project/image/QY4bzyWkIIqMnpwYi20AYm77rflk6t43xYdaaICq1jg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 10px 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.connect-wallet-container {
+    margin-left: 20px;
+}
+/* CSS Styles for Image Slideshow */
+.image-container {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    max-width: 600px; /* Adjust the width as needed */
+    margin: 0 auto;
+}
+
+.slide {
+    width: 100%;
+    transition: transform 1s ease-in-out;
+}
+
+.connect-wallet-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Navigation Styles */
+.beige-navbar {
+    background-color: #F5F5DC;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.nav-item {
+    margin-right: 20px;
+    background-color: #333;
+    color: #fff;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.content-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.image-description {
+    display: flex;
+    align-items: center;
+}
+
+.image-description img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.image-text {
+    flex: 1;
+}
+.crypto-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px -5px; /* Reduce margin to move boxes closer */
+    align-items: flex-start; /* Align boxes to the top of their container */
+}
+
+.transaction-history-box,
+.price-box {
+    flex: 1;
+    padding: 10px;
+    border: 5px solid #ccc;
+    border-radius: 6px;
+    background-color: #F5F5DC;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 3px; /* Reduce the margin between boxes */
+    text-align: center; /* Center the content within the boxes */
+}
+
+#crypto-dropdown {
+    background-color: #F5F5DC;
+    border: 2px solid #ccc;
+    border-radius: 2px;
+	text-align: center;
+}
+
+.transaction-history-box h3,
+.price-box h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.content {
+    display: flex;
+    flex-direction: column;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.search-bar input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search-bar button[type="submit"] {
+    padding: 5px 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin-left: 5px;
+    cursor: pointer;
+}
+
+.content img {
+    max-width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.content p {
+    font-size: 16px;
+    margin: 0;
+}
+/* Add spacing for penguin images */
+/* Centered penguin */
+.center-penguin {
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Center the image horizontally */
+}
+
+/* Left penguin */
+.left-penguin {
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Center the image vertically and add spacing */
+}
+
+/* Right penguin */
+.right-penguin {
+    max-width: 30%;
+    height: auto;
+    display: block;
+    margin: 10px auto; /* Center the image vertically and add spacing */
+}
+
+/* Center the images vertically and evenly space them */
+.image-container {
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space them evenly */
+}
+
+/* Center-align text within the image-container */
+.image-container {
+    text-align: center;
+}
+
+/* Add some top margin to the h4 for spacing */
+.image-container h4 {
+    margin-top: 10px;
+}
+
+footer {
+    background-color: black; /* Set the background color for the footer */
+    color: white; /* Set the text color for the footer */
+    text-align: center; /* To center-align the text in the footer */
+    padding: 10px; /* Add padding for better appearance */
+    display: flex; /* Flexbox to control layout */
+    justify-content: space-between; /* To push the logo to the right */
+    align-items: center; /* To vertically align the text and logo */
+}
+
+/* Style for the logo */
+.logo {
+    max-width: 100px; /* Adjust the max-width as needed */
+    height: auto;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center horizontally */
+}
+
+/* Add these styles for the Accounts page */
+.account-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+/* Center-align the avatar-display */
+.avatar-display {
+    max-width: 150px;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin: 0 auto; /* Center horizontally */
+    margin-top: 20px; /* Add top margin for spacing */
+}
+
+
+
+.transaction-history,
+.wallet-bid-history {
+    flex: 1;
+    padding: 10px;
+    border: 5px solid #ccc;
+    border-radius: 6px;
+    background-color: #F5F5DC;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin: 0 10px;
+}
+
+.transaction-history h3,
+.wallet-bid-history h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Add this style to center-align the "Accounts" heading */
+.center-h1 {
+    text-align: center;
+}
+
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* Adjust the number of columns as needed */
+    grid-gap: 20px; /* Add spacing between grid items */
+}
+
+.nft-grid-item {
+    text-align: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #F5F5DC;
+}
+
+.nft-image {
+    width: 50px; /* Set your desired width for the NFT images */
+    height: 50px; /* Set your desired height for the NFT images */
+    object-fit: cover;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+
+
+
+
+
+
+
+/* Center-align the "See More" button */
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px; /* Add margin for spacing */
+}
+
+

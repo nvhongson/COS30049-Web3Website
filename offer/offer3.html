@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        .center-content {
+            text-align: center;
+        }
+        .offer-form {
+            display: inline-block;
+            text-align: left;
+            background-color: #fff;
+            border-radius: 20px;
+            padding: 20px;
+            margin: 20px;
+        }
+        .nft-info {
+            text-align: center;
+        }
+        .center-button {
+            text-align: center;
+        }
+    </style>
+    <title>NFT Offer</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="header-container">
+                <div class="connect-wallet-container">
+                    <button class="connect-wallet-button">Connect Wallet</button>
+                </div>
+                <div class="header-right">
+                    <input type="text" placeholder="Search Something">
+                    <button type="submit">Filter</button>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <nav class="beige-navbar">
+        <div class="navigation-bar">
+            <ul class="nav-list">
+ <li class="nav-item"><a href="landingpage.html">Home</a></li>
+                    <li class="nav-item"><a href="swap.html">Swap</a></li>
+                    <li class="nav-item"><a href="token.html">Tokens</a></li>
+                    <li class="nav-item"><a href="NFT.html">NFT</a></li>
+                    <li class="nav-item"><a href="transaction.html">Transaction History</a></li>
+                    <li class="nav-item"><a href="accounts.html">Account</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="center-content">
+        <div class="content-box">
+            <div class="content">
+                <div class="nft-info">
+                    <!-- Display NFT details -->
+                    <img src="images/nft3.jpg" alt="NFT 3">
+                    <h3>Beautiful World</h3>
+                    <p>4.4 ETH</p>
+                </div>
+
+                <div class="offer-form">
+                    <!-- Offer Form -->
+                    <label for="offer-amount">Offer Amount (Max 4.4 ETH):</label>
+                    <input type="number" id="offer-amount" name="offer-amount" step="0.1" max="4.4" placeholder="0.00">
+                    <span class="eth-symbol">ETH</span>
+                    <br>
+
+                    <label for="payment-method">Payment Method:</label>
+                    <select id="payment-method" name="payment-method">
+                        <option value="wallet">Account Wallet</option>
+                        <option value="paypal">PayPal</option>
+                        <option value="BTC">BTC Wallet</option>
+                        <!-- Add other payment options here -->
+                    </select>
+                    <br>
+
+                    <button type="submit" class="center-button">Submit Offer</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <!-- Your footer content -->
+    </footer>
+</body>
+</html>

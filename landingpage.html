@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Homepage</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/web3/1.7.4-rc.1/web3.min.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+        .center-h4 {
+            text-align: center;
+        }
+        .button-container {
+            text-align: center;
+        }
+        .order-button, .buy-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+        .paragraph1 {
+            text-align: center;
+        }
+        .connect-wallet-button {
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 25px;
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div id="header-container">
+                <div class="connect-wallet-container">
+                    <button class="connect-wallet-button">Connect Wallet</button>
+                </div>
+                <div class="header-right">
+                    <input type="text" placeholder="Search Something">
+                    <button type="submit">Filter</button>
+                </div>
+            </div>
+        </header>
+        
+        <nav class="beige-navbar">
+            <div class="navigation-bar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="landingpage.html">Home</a></li>
+                    <li class="nav-item"><a href="swap.html">Swap</a></li>
+                    <li class="nav-item"><a href="token.html">Tokens</a></li>
+                    <li class="nav-item"><a href="NFT.html">NFT</a></li>
+                    <li class="nav-item"><a href="transaction.html">Transaction History</a></li>
+                    <li class="nav-item"><a href="accounts.html">Account</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <main>
+            <div class="content-box">
+                <div class="content">
+                    <div class="image-description">
+                        <img src="images/penguin1.png" alt="Image Description">
+                        <div class="image-text">
+                            <h2>Pudgy Penguin#4609</h2>
+                            <p>One of the most sought after digital collectibles</p>
+                            <p>Penguin #4609 now remains an important </p>
+                            <p>piece of the collection's history—symbolic </p>
+                            <p>of the collection's rebirth and resilience of </p>
+                            <p>its community members.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="crypto-info">
+                <div class="transaction-history-box">
+    <h3>Transaction History</h3>
+    <form action="transaction.html">
+        <div class="search-bar">
+            <input type="text" placeholder="Transaction ID">
+            <button type="submit">Search</button>
+        </div>
+    </form>
+
+					<script>
+    document.getElementById('search-button').addEventListener('click', function () {
+        window.location.href = 'transaction.html'; // Redirect to transaction.html
+    });
+</script>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Transaction ID</th>
+                                <th>Currency</th>
+                                <th>Amount</th>
+                                <th>Sender</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>123456</td>
+                                <td>ETH</td>
+                                <td>0.2</td>
+                                <td>1x1110x11</td>
+                            </tr>
+                            <tr>
+                                <td>789012</td>
+                                <td>BTC</td>
+                                <td>1.2</td>
+                                <td>1x0110110</td>
+                            </tr>
+                            <tr>
+                                <td>345678</td>
+                                <td>ETH</td>
+                                <td>2.2</td>
+                                <td>1x11011101</td>
+                            </tr>
+                            <tr>
+                                <td>987654</td>
+                                <td>BTC</td>
+                                <td>4.3</td>
+                                <td>1.1</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="price-box">
+                    <h3>Crypto Price</h3>
+                    <p id="crypto-info1">Price for selected cryptocurrency will be displayed here.</p>
+                    <select id="crypto-dropdown">
+                        <option value="">Choose a cryptocurrency</option>
+                        <option value="btc">Bitcoin</option>
+                        <option value="eth">Ethereum</option>
+                        <option value="usdt">USDT</option>
+						<option value="bnb">BNB</option>
+						<option value="xrp">XRP </option>
+						<option value="usdc">USDC</option>
+						<option value="sol">SOL</option>
+						<option value="ltc">LTC</option>
+                    </select>
+                    <p id="crypto-value">Select a cryptocurrency to see its value.</p>
+                    <script>
+                        // Define cryptocurrency values
+                        const cryptoValues = {
+                            btc: 27884.55,
+                            eth: 1579.59,
+                            usdt:1.00 ,
+							bnb:213.21,
+							xrp:0.49,
+							usdc:1.00,
+							sol:23.50,
+							ltc:63.78,
+                        };
+
+                        const cryptoDropdown = document.getElementById("crypto-dropdown");
+                        const cryptoValueDisplay = document.getElementById("crypto-value");
+
+                        cryptoDropdown.addEventListener("change", function() {
+                            const selectedCrypto = cryptoDropdown.value;
+                            const value = cryptoValues[selectedCrypto];
+                            cryptoValueDisplay.textContent = `Current value of ${cryptoDropdown.options[cryptoDropdown.selectedIndex].text}: $${value}`;
+                        });
+                    </script>
+                </div>
+            </div>
+        </main>
+
+        <div class="button-container">
+            <a href="token.html"><button class="order-button">Cryptocurrency</button></a>
+            <a href="NFT.html"><button class="buy-button">NFT</button></a>
+        </div>
+
+        <h4 class="center-h4">Other NFT Project</h4>
+        <!-- Add a div for the image slideshow -->
+<div class="image-container">
+    <img src="images/penguin2.jpg" alt="Image Description" class="slide">
+    <img src="images/penguin3.png" alt="Image Description" class="slide">
+    <img src="images/penguin4.png" alt="Image Description" class="slide">
+	<img src="images/nft1.jpg" alt="Image Description" class="slide">
+	<img src="images/nft2.jpg" alt="Image Description" class="slide">
+	<img src="images/nft3.jpg" alt="Image Description" class="slide">
+</div>
+
+
+        <p class="paragraph1">All these NFT Project are purchasable in our NFT Department. Please visit <a href="NFT.html">NFT</a> for pricing.</p>
+
+        <footer>
+            <p>&copy; NFT Trading Platform</p>
+            <p>NFT site made by William Wei, Son Nguyen, Sathnidu Athauda</p>
+            <img src="images/logo.png" alt="NFT Trading Platform Logo" class="logo">
+        </footer>
+    </div>
+	<script>
+    let currentIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    
+    function showSlide(index) {
+        slides.forEach((slide, i) => {
+            if (i === index) {
+                slide.style.transform = 'translateX(0)';
+            } else {
+                slide.style.transform = 'translateX(-100%)';
+            }
+        });
+    }
+    
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        showSlide(currentIndex);
+    }
+    
+    setInterval(nextSlide, 3000); // Change image every 3 seconds
+</script>
+</body>
+</body>
+
+</html>

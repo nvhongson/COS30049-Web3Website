@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Token History</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div id="header-container">
+                <div class="connect-wallet-container">
+                    <button class="connect-wallet-button">Connect Wallet</button>
+                </div>
+				<div class="header-right">
+                    <input type="text" placeholder="Search Something">
+                    <button type="submit">Filter</button>
+                </div>
+            </div>
+        </header>
+        <nav class="beige-navbar">
+            <div class="navigation-bar">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="landingpage.html">Home</a></li>
+                    <li class="nav-item"><a href="swap.html">Swap</a></li>
+                    <li class="nav-item"><a href="token.html">Tokens</a></li>
+                    <li class="nav-item"><a href="NFT.html">NFT</a></li>
+                    <li class="nav-item"><a href="transaction.html">Transaction History</a></li>
+                    <li class="nav-item"><a href="accounts.html">Account</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="account-section">
+            <div class="crypto-swap">
+                <div class="crypto-box">
+                    <div class="crypto">
+                        <h3>Swap From</h3>
+                        <select id="crypto1" onchange="updateCryptoPrice('crypto1', 'crypto1-price')">
+                            <option value="btc">Bitcoin</option>
+                            <option value="eth">Ethereum</option>
+                            <option value="usdt">Tether USDT</option>
+                            <option value="bnb">BNB</option>
+                            <option value="xrp">XRP</option>
+                            <option value="usdc">USDC</option>
+                            <option value="sol">Solana</option>
+                            <option value="ltc">Litecoin</option>
+                            <!-- Add more options for other cryptocurrencies -->
+                        </select>
+                        <label for="crypto1-amount">Amount:</label>
+                        <input type="number" id="crypto1-amount" value="1">
+                        <p>Price: $<span id="crypto1-price">27,884.55</span></p>
+                    </div>
+                    <div class="crypto">
+                        <h3>Swap To</h3>
+                        <select id="crypto2" onchange="updateCryptoPrice('crypto2', 'crypto2-price')">
+                            <option value="btc">Bitcoin</option>
+                            <option value="eth">Ethereum</option>
+                            <option value="usdt">Tether USDT</option>
+                            <option value="bnb">BNB</option>
+                            <option value="xrp">XRP</option>
+                            <option value="usdc">USDC</option>
+                            <option value="sol">Solana</option>
+                            <option value="ltc">Litecoin</option>
+                            <!-- Add more options for other cryptocurrencies -->
+                        </select>
+                        <label for="crypto2-amount">Amount:</label>
+                        <input type="number" id="crypto2-amount" value="0">
+                        <p>Price: $<span id="crypto2-price">27,884.55</span></p>
+                    </div>
+                </div>
+                <div class="result">
+                    <h3>Swap Result</h3>
+                    <p>Differential: <span id="price-differential">$0.00</span></p>
+                    <button onclick="calculateDifferential()">Swap</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Sample price data for different cryptocurrencies
+        const cryptoPrices = {
+            btc: 27884.55,
+            eth: 1579.59,
+            usdt: 1.00,
+            bnb: 213.21,
+            xrp: 0.49,
+            usdc: 1.00,
+            sol: 23.50,
+            ltc: 63.78,
+            // Add more prices for other cryptocurrencies
+        };
+
+        function updateCryptoPrice(crypto, priceElementId) {
+            const selectedCrypto = document.getElementById(crypto).value;
+            document.getElementById(priceElementId).textContent = cryptoPrices[selectedCrypto].toFixed(2);
+        }
+
+        function calculateDifferential() {
+            const crypto1 = document.getElementById('crypto1').value;
+            const crypto2 = document.getElementById('crypto2').value;
+            const crypto1Amount = parseFloat(document.getElementById('crypto1-amount').value);
+            const crypto2Amount = parseFloat(document.getElementById('crypto2-amount').value);
+
+            const crypto1Price = cryptoPrices[crypto1];
+            const crypto2Price = cryptoPrices[crypto2];
+
+            const differential = (crypto1Amount * crypto1Price) - (crypto2Amount * crypto2Price);
+
+            document.getElementById('price-differential').textContent = `$${differential.toFixed(2)}`;
+        }
+    </script>
+</body>
+<footer>
+            <p>&copy; NFT Trading Platform</p>
+            <p>NFT site made by William Wei, Son Nguyen, Sathnidu Athauda</p>
+            <img src="images/logo.png" alt="NFT Trading Platform Logo" class="logo">
+        </footer>
+</html>
